@@ -1,0 +1,15 @@
+GetNewFactIntent a fact
+GetNewFactIntent a google fact
+GetNewFactIntent tell me a fact
+GetNewFactIntent tell me a google fact
+GetNewFactIntent give me a fact
+GetNewFactIntent give me a google fact
+GetNewFactIntent tell me trivia
+GetNewFactIntent tell me a google trivia
+GetNewFactIntent give me trivia
+GetNewFactIntent give me a google trivia
+GetNewFactIntent give me some information
+GetNewFactIntent give me some google information
+GetNewFactIntent tell me something
+GetNewFactIntent give me something
+AMAZON.CancelIntent No
