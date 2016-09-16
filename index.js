@@ -84,12 +84,12 @@ var handlers = {
         var randomFact = FACTS[factIndex];
 
         // Create speech output
-        var speechOutput = "Here's your Google fact: " + randomFact + ". Would you like another fact about the search giant?";
+        var speechOutput = "Here's your Google fact, " + randomFact + ". Would you like another fact about the search giant?";
 
         this.emit(':askWithCard', speechOutput, SKILL_NAME, randomFact)
     },
     'AMAZON.HelpIntent': function () {
-        var speechOutput = "You can say tell me an google fact, or, you can say exit... What can I help you with?";
+        var speechOutput = "You can say tell me a google fact, or, you can say stop... What can I help you with?";
         var reprompt = "What can I help you with?";
         this.emit(':ask', speechOutput, reprompt);
     },

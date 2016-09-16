@@ -2,6 +2,7 @@ GetNewFactIntent a fact
 GetNewFactIntent a google fact
 GetNewFactIntent tell me a fact
 GetNewFactIntent tell me a google fact
+GetNewFactIntent tell me google facts
 GetNewFactIntent give me a fact
 GetNewFactIntent give me a google fact
 GetNewFactIntent tell me trivia
@@ -13,3 +14,4 @@ GetNewFactIntent give me some google information
 GetNewFactIntent tell me something
 GetNewFactIntent give me something
 AMAZON.CancelIntent No
+AMAZON.StopIntent Exit
