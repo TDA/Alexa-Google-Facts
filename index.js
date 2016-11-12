@@ -1,7 +1,7 @@
 'use strict';
 var Alexa = require('alexa-sdk');
 
-var APP_ID = undefined; //OPTIONAL: replace with "amzn1.echo-sdk-ams.app.[your-unique-value-here]";
+var APP_ID = "amzn1.ask.skill.6ba6945d-f923-42d9-bdf4-f4691833149c"; //OPTIONAL: replace with "amzn1.echo-sdk-ams.app.[your-unique-value-here]";
 var SKILL_NAME = 'Unofficial Google Facts';
 
 /**
@@ -66,7 +66,7 @@ var FACTS = [
 
 exports.handler = function(event, context, callback) {
     var alexa = Alexa.handler(event, context);
-    alexa.APP_ID = APP_ID;
+    alexa.appId = APP_ID;
     alexa.registerHandlers(handlers);
     alexa.execute();
 };
@@ -74,6 +74,12 @@ exports.handler = function(event, context, callback) {
 var handlers = {
     'LaunchRequest': function () {
         this.emit('GetFact');
+    },
+    'SessionEndedRequest': function () {
+        this.emit(':tell', 'Ok, bah-bye!!');
+    },
+    'EndSession': function () {
+        this.emit(':tell', 'Ok, bah-bye!!');
     },
     'GetNewFactIntent': function () {
         this.emit('GetFact');
@@ -84,9 +90,9 @@ var handlers = {
         var randomFact = FACTS[factIndex];
 
         // Create speech output
-        var speechOutput = "Here's your Google fact, " + randomFact + ". Would you like another fact about the search giant?";
+        var speechOutput = "Here's your Google fact, " + randomFact;
 
-        this.emit(':askWithCard', speechOutput, SKILL_NAME, randomFact)
+        this.emit(':tell', speechOutput, SKILL_NAME, randomFact)
     },
     'AMAZON.HelpIntent': function () {
         var speechOutput = "You can say tell me a google fact, or, you can say stop... What can I help you with?";
